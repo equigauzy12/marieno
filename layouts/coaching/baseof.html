@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    {{- partial "heads/head.html" . -}}
+    <!-- <body style="background-color: var(--colorbody);"> -->
+    <body >
+        
+        {{- partial "headers/header_coaching.html"}}
+        
+     
+        <main id="content" class=" container mt-0">
+            <div class="row back-body">
+                
+                    {{- partial "menus/sidebar_coaching.html"}}
+                
+                <div class="col-sm-9 back-body-coaching">
+                    {{- block "main" . }}{{- end }}
+                </div>  
+            </div>
+        </main>
+       
+        {{- partial "footers/footer_coaching.html" . -}}
+    </body>
+</html>

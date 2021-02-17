@@ -1,0 +1,10 @@
+
+{{ define "main" }}
+{{- partial "headers/header_accueil.html"}}
+{{- partial "accueilSVG.html" . -}}
+{{- partial "accueilTexte.html" . -}}
+{{- partial "accueilCarousel.html" . -}}
+{{- partial "footers/footer_accueil.html" . -}}
+
+{{ .Content }}
+{{ end }}

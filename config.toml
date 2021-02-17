@@ -1,0 +1,42 @@
+baseURL = "https://example.com"
+languageCode = "fr-FR"
+title = "Les Chevaux de Saint-Gauzy"
+
+googleAnalytics = "UA-123-45"
+
+[menu]
+    [[menu.coaching]]
+        identifier = "coaching"
+        name = "Coaching"
+        url = "/coaching"
+        weight = 20
+
+    [[menu.coaching]]
+        identifier = "coaching-objectifs"
+        name = "Objectifs"
+        url = "/coaching/objectifs"
+        weight = 30
+    
+    [[menu.coaching]]
+        identifier = "coaching-public"
+        name = "Le Public"
+        url = "/coaching/public"
+        weight = 40
+
+    [[menu.coaching]]
+        identifier = "coaching-methodes"
+        name = "Les Méthodes"
+        url = "/coaching/methodes"
+        weight = 50
+
+    [[menu.coaching]]
+        identifier = "coaching-approche"
+        name = "Approche Personnalisée"
+        url = "/coaching/approche"
+        weight = 50
+
+    [[menu.coaching]]
+        identifier = "coaching-temoignages"
+        name = "Les Témoignages"
+        url = "/coaching/temoignages"
+        weight = 60

@@ -1,0 +1,59 @@
+/* css de la page d'accueil pour positionner les carrés
+et changer de position sur un écran inférieur à 720 px */
+
+:root {
+    --color1: #118a79;
+    --color2: #3baea0;
+    /* --main-title-color: #994159; */
+
+    --colorbody: #C0E0D1;
+    --footer-bg-color: #ffe380;
+    --color-text-2: #ff9700;
+    --color-text-1: #04129b;
+}
+
+.backC1{
+    background-color: var(--color-text-1);
+}
+
+.back-body{
+    background-color: var(--colorbody) !important;
+}
+
+.back-body-coaching{
+    background-color: var(--color1) !important;
+}
+
+.back-body-equitation{
+    background-color: var(--color2) !important;
+}
+
+
+.textC1{
+    color: var(--color-text-1);
+    /* font-size: 3em; */
+}
+.textSize1{
+    font-size: 1.25em;
+}
+
+
+.menuheight{
+    min-height: 7em;
+}
+
+.menutext{
+    color: var(--color-text-1) !important;
+    font-size: 1.4em;
+}
+.menuspace{
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+.back-footer{
+    background-color: var(--footer-bg-color);
+}
+
+a:hover {
+    color: var(--color-text-2) !important;
+}
