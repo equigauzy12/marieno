@@ -32,39 +32,5 @@
         </div>  
     </div>
 
-    <div class="container back-body menuheight" >  
-        <div class="row justify-content-center">
-            <nav class="text-center navbar navbar-expand-md navbar-light " >
-                <button class="navbar-toggler menutext" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>    
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        {{ $currentPage := . }}
-                        {{ range .Site.Menus.main }}
-                            {{ if .HasChildren }}
-                                <li class="{{ if $currentPage.HasMenuCurrent "main" . }}nav-item menuspace{{ end }}">
-                                <a class= "nav-link menutext" href="{{ .URL }}">{{ .Name }}</a>
-                            </li>
-                            
-                            <ul>
-                                {{ range .Children }}
-                                    <li class="{{ if $currentPage.IsMenuCurrent "main" . }}nav-item menuspace{{ end }} ">
-                                        <a class= "nav-link menutext "  href="{{ .URL }}">{{ .Name }}</a>
-                                    </li>
-                                {{ end }}
-                            </ul>
-
-                            {{ else }}
-                                <li>
-                                    <a class= "nav-link menutext " href="{{ .URL }}">{{ .Name }}</a>
-                                </li>
-                            {{ end }}
-                        {{ end }}
-                    </ul>
-                </div>
-            </nav>
-        </div>  
-    </div>
 </header>
 
