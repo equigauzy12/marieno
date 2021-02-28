@@ -1,42 +1,16 @@
-
 <header>
-    <head>
-        <link rel="stylesheet" href="{{ .Site.BaseURL}}css/accueil.css">
-    </head>
-
-    <div class="container back-body">
-        <div class="row  justify-content-center pt-4">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-            viewBox="0 0 300 100">
-            <g preserveAspectRatio="xMidYMin slice">
-                <image xlink:href="/svg/chevaux-header-accueil.svg" alt="photo en tête chevaux" height="100%" width="100%" x="0" y="0"/>
-                <text x="50" y="40" style="font-size:1em;fill:#ff9700;">Les Chevaux de Saint-Gauzy</text>            
-           
-            </g>
-            </svg>
-
-
-            <!-- <div class="col-12 text-center"> -->
-                <!-- <img   class="img-fluid" src="/media/header/chevaux-header-accueil.png"  alt="les chevaux de saint-gauzy"> -->
-            <!-- </div> -->
-        <!-- </div>
-        <div class="row justify-content-center back-body">
-            <h1 class="text-center pt-5 textC1" style="font-size: 3em;" ><strong>La Ferme de Saint-Gauzy</h1></strong></h1>
-             -->
-        </div>  
-   
     
-          
-        <div class="row justify-content-center ">
-            <nav class=" text-center navbar navbar-expand-md navbar-light " style="padding-left: 12%;" >
-                     
+    <div class="container back-body ratio ratio-16x9 " style="background-image: url(/media/header/chevaux-header-accueil.png);  background-position: center;background-size: cover; background-repeat:no-repeat;background-attachment: local;opacity:0.99;  ">
+        <h1 class="display-1  textC2" style="display: flex; align-items: center; justify-content: center;" ><strong>Les Chevaux de Saint-Gauzy</strong></h1>
+    </div>
+    <div class="container back-body menuheight" >  
+        <div class="row justify-content-center">
+            <nav class="text-center navbar navbar-expand-md navbar-light " >
                 <button class="navbar-toggler menutext" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>    
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
                     <ul class="navbar-nav">
-
                         <li class="nav-item menuspace ">
                             <a class= "   nav-link menutext" href="/coaching/">Coaching</a>
                         </li>
@@ -52,10 +26,45 @@
                         <li class="nav-item menuspace">
                             <a class= "nav-link  menutext" style="color: fuchsia;"href="/utilities/contact">Contact</a>
                         </li>
-
-                     </ul>
+                    </ul>
                 </div>
             </nav>
-        </div>
+        </div>  
+    </div>
+
+    <div class="container back-body menuheight" >  
+        <div class="row justify-content-center">
+            <nav class="text-center navbar navbar-expand-md navbar-light " >
+                <button class="navbar-toggler menutext" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>    
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        {{ $currentPage := . }}
+                        {{ range .Site.Menus.main }}
+                            {{ if .HasChildren }}
+                                <li class="{{ if $currentPage.HasMenuCurrent "main" . }}nav-item menuspace{{ end }}">
+                                <a class= "nav-link menutext" href="{{ .URL }}">{{ .Name }}</a>
+                            </li>
+                            
+                            <ul>
+                                {{ range .Children }}
+                                    <li class="{{ if $currentPage.IsMenuCurrent "main" . }}nav-item menuspace{{ end }} ">
+                                        <a class= "nav-link menutext "  href="{{ .URL }}">{{ .Name }}</a>
+                                    </li>
+                                {{ end }}
+                            </ul>
+
+                            {{ else }}
+                                <li>
+                                    <a class= "nav-link menutext " href="{{ .URL }}">{{ .Name }}</a>
+                                </li>
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+            </nav>
+        </div>  
     </div>
 </header>
+
